@@ -1,13 +1,7 @@
 package com.nbrown.springwebflux.model;
 
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document
 public class Product {
-
-    @Id
     private Integer productId;
     private String description;
     private double price;
@@ -52,5 +46,16 @@ public class Product {
 
     public void setInSale(boolean inSale) {
         this.inSale = inSale;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productId=" + productId +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", inSale=" + inSale +
+                '}';
     }
 }
